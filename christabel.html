@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day for Christabel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e71d36;
+            margin-top: 0;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #e71d36;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d01731;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day, my dearest Christabel!</h1>
+        <p>On this special day, I want to express my love and appreciation for you. You mean the world to me, and I'm grateful for every moment we share together.</p>
+        <p>May our love continue to grow stronger with each passing day. You are my sunshine, my joy, and my everything.</p>
+        <img src="3.jpg" alt="You and Christabel">
+        <p>With all my love,</p>
+        <p>Your loving partner</p>
+    </div>
+    <div class="container">
+        <form id="messageForm">
+            <label for="message">Type your message for me:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            <button type="button" onclick="sendMessage()">Send Message</button>
+        </form>
+    </div>
+
+    <!-- JavaScript for generating the WhatsApp link -->
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            var encodedMessage = encodeURIComponent(message);
+            var whatsappLink = "https://wa.me/?text=" + encodedMessage;
+            window.location.href = whatsappLink;
+        }
+    </script>
+</body>
+</html>
