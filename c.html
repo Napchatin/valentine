@@ -3,105 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHS Letter Writing Platform</title>
+    <title>Valentine's Day for Christabel</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        .loading-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 2s ease-out;
-        }
-
-        .loading {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 2s linear infinite;
-        }
-
-        .loading-description {
-            color: white;
-            text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            box-sizing: border-box;
         }
         .container {
-            max-width: 960px;
-            margin: 0 auto;
+            max-width: 600px;
+            margin: 50px auto;
             padding: 20px;
-            text-align: center;
-            opacity: 0; /* Initially hide content */
-            transition: opacity 2s ease-out;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #333;
+            color: #e71d36;
+            margin-top: 0;
         }
         p {
-            color: #666;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
+        img {
+            max-width: 100%;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
         }
-        .btn:hover {
-            background-color: #0056b3;
+        form {
+            text-align: center;
+        }
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #e71d36;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d01731;
         }
     </style>
 </head>
 <body>
-    <div class="loading-container">
-        <div class="loading"></div>
-        <div class="loading-description">
-            <h4 style="color: #0056b3;font-size: 60px;">SHS LINK UP
-                <div><span class="at-symbol">@WORD</span></div>
-            </h4>
-            <h1>KNOW YOUR HOUSEMASTER</h1>
-            <h1 style="color: #3498db;"> Developed by Godword Adjei </h1>
-        </div>
+    <div class="container">
+        <h1>Happy Valentine's Day, my dearest Christabel!</h1>
+        <p>On this special day, I want to express my love and appreciation for you. You mean the world to me, and I'm grateful for every moment we share together.</p>
+        <p>May our love continue to grow stronger with each passing day. You are my sunshine, my joy, and my everything.</p>
+        <img src="3.jpg" alt="You and Christabel">
+        <p>With all my love,</p>
+        <p>Your loving partner</p>
     </div>
     <div class="container">
-        <h1>Welcome to the SHS Link up</h1>
-        <p>Developed by: Godword Adjei</p>
-        <p>Connect with friends, improve your writing skills, and stay in touch!</p>
-        <a href="login.html" class="btn">Login</a>
-        <a href="register.html" class="btn">Register</a>
+        <form id="messageForm">
+            <label for="message">Type your message for me:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            <button type="button" onclick="sendMessage()">Send Message</button>
+        </form>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Wait for the page to load, then fade out the loading animation and description
-            setTimeout(function () {
-                document.querySelector(".loading-container").style.opacity = "0";
-                document.querySelector(".container").style.opacity = "1";
-                document.querySelector(".loading-container").style.pointerEvents = "none";
-            }, 1500);
-        });
-    </script>
 
+    <!-- JavaScript for generating the WhatsApp link -->
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            var encodedMessage = encodeURIComponent(message);
+            var whatsappLink = "https://wa.me/?text=" + encodedMessage;
+            window.location.href = whatsappLink;
+        }
+    </script>
 </body>
 </html>
